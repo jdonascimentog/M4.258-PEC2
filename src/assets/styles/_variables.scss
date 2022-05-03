@@ -1,0 +1,76 @@
+@use "sass:color";
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$font-family-serif: "Georgia", "Times New Roman", serif;
+$assetPath: "../images";
+$mqMinWidth: 800px;
+$mqMaxWidth: 1400px;
+
+$primary-c: #1b4332;
+$secondary-c: #2d6a4f;
+$success-c: #52b788;
+$info-c: #95d5b2;
+$warning-c: #f48c06;
+$danger-c: #9d0208;
+$light-c: #d8f3dc;
+$dark-c: #081c15;
+$uoc-corporate: $dark-c;
+$uoc-masterbrand: $light-c;
+$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+$accordion-color: $dark-c;
+$accordion-bg: $light-c;
+$accordion-border-color: rgba($dark-c, .125);
+$accordion-icon-color: $dark-c;
+$accordion-icon-active-color: $success-c;
+$accordion-button-bg: $info-c;
+$accordion-button-active-bg: $secondary-c;
+$accordion-button-active-color: $light-c;
+$accordion-button-focus-border-color: $dark-c;
+
+$input-btn-focus-color:  $dark-c;
+
+$theme-colors: (
+  "primary": $primary-c,
+  "secondary": $secondary-c,
+  "success": $success-c,
+  "info": $info-c,
+  "warning": $warning-c,
+  "danger": $danger-c,
+  "light": $light-c,
+  "dark": $dark-c,
+);
+
+@mixin theme($theme: $dark-c) {
+  background: $theme;
+  box-shadow: 0 0 1px rgba($theme, 0.25);
+  color: color-contrast($theme);
+}
+
+@mixin borders($color: $dark-c) {
+  border-color: $color;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-top: none;
+  border-bottom: none;
+}
+
+$columnas: 9;
+
+@for $i from 1 through $columnas {
+  .columna-#{$i} {
+    flex: 0 0 calc(100% / $columnas * $i)
+  }
+  .columna-despl-#{$i} {
+    margin-left: calc(100% / $columnas * $i)
+  }
+}
+
+@media (max-width: $mqMinWidth) {
+  @for $i from 1 through $columnas {
+    .columna-#{$i} {
+      flex: 0 0 100%
+    }
+  }
+}

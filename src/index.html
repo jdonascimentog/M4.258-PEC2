@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="./assets/styles/main.scss"
+        />
+        <!-- do not remove this line! -->
+        <title>HardRock Festival</title>
+    </head>
+    <body>
+        <include src="./views/header.html"></include>
+        <div class="grid-portada">
+            <h1 class="grid-portada__title">Festival Internacional HardRock</h1>
+            <div class="grid-portada__space"></div>
+            <img
+                class="grid-portada__banner"
+                src="./assets/images/boombox-g1f1a668d4_1920.png"
+                alt="Boombox"
+            />
+            <div class="grid-portada__description">
+                <p>
+                    <span class="badge bg-danger">HardRock</span> es un festival donde podrás revivir las canciones de las grandes bandas del punk-rock americano, de la mano de sus mejores bandas tributo.
+                </p>
+            </div>
+            <div class="grid-portada__calendar">
+                <h2><span class="badge bg-danger">02</span>May</h2>
+                <h2><span class="badge bg-danger">08</span>May</h2>
+                <h3>Palacio de deportes</h3>
+                <h3>Elche</h3>
+            </div>
+            <div class="grid-portada__actions">
+                <button type="button" class="btn btn-primary btn-lg">Regístrate</button>&nbsp;&nbsp;<button type="button" class="btn btn-success btn-lg">Comprar pases</button>
+            </div>
+        </div>
+        <include src="./views/footer.html"></include>
+        <script type="module" src="./assets/scripts/main.js"></script>
+        <!-- do not remove this line! -->
+    </body>
+</html>
